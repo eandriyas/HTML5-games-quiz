@@ -2,8 +2,9 @@ body {
     position: relative;
     width: 411px;
     height: 823px;
-    border: 1px solid #999;
+    /* border: 1px solid #999; */
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .loading {

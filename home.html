@@ -7,13 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Start page</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script>
+        const electron = require("electron");
+        const ipc = electron.ipcRenderer;
+        document.addEventListener("DOMContentLoaded", function () {
+            ipc.send("mainWindowLoaded")
+            ipc.on("resultSent", function (evt, result) {
+                let resultEl = document.getElementById("result");
+                console.log(result);
+                for (var i = 0; i < result.length; i++) {
+                    resultEl.innerHTML += "First Name: " + result[i].FirstName.toString() + "<br/>";
+                }
+            });
+        });
+    </script>
 </head>
 
 <body id="Page" data-page="content-start">
+    <!-- <p id="result"></p> -->
     <div class="group-status">
         <div class="level-status">
             <div class="icon-level-status"></div>
-            <p class="text-level-status">Level 1</p>
+            <p class="text-level-status">Level 2</p>
         </div>
         <div class="poin-status">
             <div class="icon-poin-status"></div>

@@ -67,7 +67,7 @@ if (btnKeluar[0]) {
 }
 
 setPage('content-home')
-setLevel('Level 1')
+setLevel('Level 2')
 setPoin(100)
 
 var btnStart = document.getElementsByClassName('content-start');
