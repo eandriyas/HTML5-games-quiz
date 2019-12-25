@@ -1,0 +1,302 @@
+body {
+    position: relative;
+    width: 411px;
+    height: 823px;
+    border: 1px solid #999;
+    margin: 0 auto;
+}
+
+.loading {
+    position: absolute;
+    width: 226px;
+    height: 287px;
+    left: 92px;
+    top: 268px;
+    background-image: url('../img/Loading.png');
+}
+
+footer {
+    position: absolute;
+    width: 411px;
+    height: 130px;
+    left: 0px;
+    top: 703px;
+    background-image: url('../img/bg-bottom.png');
+    background-repeat: no-repeat;
+}
+
+.level-status {
+    position: absolute;
+    width: 93px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.icon-level-status {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-image: url('../img/icon-level.png');
+    background-repeat: no-repeat;
+
+}
+
+.text-level-status {
+    position: absolute;
+    width: 56px;
+    height: 19px;
+    left: 35px;
+    top: 5px;
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 19px;
+    margin: 0;
+
+    color: #000000;
+}
+
+.poin-status {
+    position: absolute;
+    width: 63px;
+    height: 26px;
+    left: 245px;
+    cursor: pointer;
+
+}
+
+.icon-poin-status {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-image: url('../img/icon-level.png');
+    background-repeat: no-repeat;
+}
+
+.text-poin-status {
+    position: absolute;
+    width: 30px;
+    height: 19px;
+    left: 35px;
+    top: 5px;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 19px;
+    /* identical to box height */
+
+
+    color: #000000;
+    margin: 0;
+
+}
+
+.play-button {
+    position: absolute;
+    width: 173px;
+    height: 173px;
+    left: 119px;
+    top: 183px;
+    background-image: url('../img/Play.png');
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+}
+
+
+.btn-text {
+    margin: 10px 0 0 0;
+    position: absolute;
+    width: 169px;
+    height: 39px;
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 19px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+
+
+}
+
+.btn {
+    position: absolute;
+    width: 169px;
+    height: 39px;
+    background: linear-gradient(63.43deg, #D020DF 3.18%, #9617A2 100%);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn-setting {
+
+    left: 121px;
+    top: 481px;
+}
+
+.btn-tentang {
+    left: 121px;
+    top: 541px;
+}
+
+.btn-keluar {
+    left: 121px;
+    top: 601px;
+}
+
+.btn-back {
+    position: absolute;
+    width: 68px;
+    height: 38px;
+    left: 0px;
+    top: 13px;
+    background-image: url('../img/Back.png');
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.group-status {
+    position: absolute;
+    width: 299px;
+    height: 26px;
+    left: 56px;
+    top: 64px;
+
+}
+
+.info-pertanyaan {
+    position: absolute;
+    width: 282px;
+    height: 68px;
+    left: 36px;
+    top: 116px;
+
+}
+
+.text-info-pertanyaan {
+    position: absolute;
+    width: 177.98px;
+    height: 19px;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 19px;
+    /* identical to box height */
+
+
+    color: #000000;
+
+}
+
+.icon-nomor-pertanyaan {
+    position: absolute;
+    width: 78.59px;
+    height: 68px;
+    left: 180px;
+    background-image: url('../img/icon-pertanyaan.png');
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+}
+
+.text-nomor-pertanyaan {
+    margin: 15px 0 0 0;
+    position: absolute;
+    width: 79px;
+    height: 68px;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 37px;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.pertanyaan {
+    position: absolute;
+    width: 339px;
+    height: 457px;
+    left: 36px;
+    top: 213px;
+}
+
+.box-pertanyaan {
+    position: absolute;
+    width: 339px;
+    height: 373px;
+
+    background: #C4C4C4;
+    border-radius: 10px;
+}
+
+.text-pertanyaan {
+    position: relative;
+    width: 307px;
+    height: 321px;
+    margin: 10px auto;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 37px;
+    text-align: center;
+
+    color: #FFFEFE;
+}
+
+.benar {
+    position: absolute;
+    width: 148px;
+    height: 67px;
+
+    background: #69B871;
+    border-radius: 10px;
+    bottom: 0px;
+    cursor: pointer;
+}
+
+.text-jawaban {
+    margin: 22px 0 0 0;
+    position: absolute;
+    height: 67px;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 19px;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+    width: 148px;
+}
+
+.salah {
+    position: absolute;
+    width: 148px;
+    height: 67px;
+    left: 191px;
+
+    background: #D87070;
+    border-radius: 10px;
+    bottom: 0px;
+    cursor: pointer;
+}
+
+.hide {
+    visibility: hidden;
+}
