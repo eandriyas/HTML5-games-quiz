@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Questrial;
+    src: url("../font/Questrial-Regular.ttf");
+}
+
 body {
     position: relative;
     width: 411px;
@@ -28,8 +33,11 @@ footer {
 
 .level-status {
     position: absolute;
-    width: 93px;
-    height: 26px;
+    width: 91px;
+    height: 25px;
+    left: 165px;
+    bottom: 0px;
+
     cursor: pointer;
 }
 
@@ -58,20 +66,40 @@ footer {
     color: #000000;
 }
 
+.text-status {
+    position: absolute;
+    width: 126px;
+    height: 19px;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 19px;
+    /* identical to box height */
+
+    color: #000000;
+    margin: 0;
+    bottom: 0;
+
+}
+
 .poin-status {
     position: absolute;
     width: 63px;
     height: 26px;
-    left: 245px;
+    left: 270px;
+    bottom: 0px;
+
     cursor: pointer;
 
 }
 
 .icon-poin-status {
     position: absolute;
-    width: 26px;
-    height: 26px;
-    background-image: url('../img/icon-level.png');
+    width: 30px;
+    height: 30px;
+    background-image: url('../img/icon-poin.png');
     background-repeat: no-repeat;
 }
 
@@ -97,8 +125,8 @@ footer {
 
 .play-button {
     position: absolute;
-    width: 173px;
-    height: 173px;
+    width: 200px;
+    height: 200px;
     left: 119px;
     top: 183px;
     background-image: url('../img/Play.png');
@@ -132,6 +160,7 @@ footer {
     background: linear-gradient(63.43deg, #D020DF 3.18%, #9617A2 100%);
     border-radius: 20px;
     cursor: pointer;
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .btn-setting {
@@ -152,10 +181,12 @@ footer {
 
 .btn-back {
     position: absolute;
-    width: 68px;
-    height: 38px;
-    left: 0px;
-    top: 13px;
+    width: 26.39px;
+    height: 26.39px;
+    left: 192px;
+    top: 17px;
+
+
     background-image: url('../img/Back.png');
     background-repeat: no-repeat;
     cursor: pointer;
@@ -163,10 +194,11 @@ footer {
 
 .group-status {
     position: absolute;
-    width: 299px;
+    width: 354px;
     height: 26px;
-    left: 56px;
-    top: 64px;
+    left: 28px;
+    top: 76px;
+
 
 }
 
@@ -231,22 +263,29 @@ footer {
     height: 457px;
     left: 36px;
     top: 213px;
+
 }
 
 .box-pertanyaan {
     position: absolute;
     width: 339px;
     height: 373px;
+    left: 0px;
+    top: 0px;
 
-    background: #C4C4C4;
+    background: #FDFDFD;
+    border: 2px solid #AA27B6;
+    box-sizing: border-box;
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 }
 
 .text-pertanyaan {
-    position: relative;
+    position: absolute;
     width: 307px;
     height: 321px;
-    margin: 10px auto;
+    left: 0px;
+    top: 0px;
 
     font-family: Questrial;
     font-style: normal;
@@ -255,17 +294,20 @@ footer {
     line-height: 37px;
     text-align: center;
 
-    color: #FFFEFE;
+    color: #000000;
 }
 
 .benar {
     position: absolute;
     width: 148px;
     height: 67px;
+    left: 0px;
+    bottom: 0px;
 
     background: #69B871;
+    border: 2px solid #69B871;
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    bottom: 0px;
     cursor: pointer;
 }
 
@@ -290,14 +332,421 @@ footer {
     position: absolute;
     width: 148px;
     height: 67px;
-    left: 191px;
+    right: 0px;
+    bottom: 0px;
 
     background: #D87070;
+    border: 2px solid #D87070;
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    bottom: 0px;
+    position: absolute;
     cursor: pointer;
 }
 
 .hide {
     visibility: hidden;
+}
+
+.level-bar {
+    position: absolute;
+    width: 339px;
+    height: 24.13px;
+    left: 36px;
+    top: 149px;
+}
+
+.icon-level-bar {
+    position: absolute;
+    width: 24.13px;
+    height: 24.13px;
+    left: 0px;
+    bottom: 0px;
+
+    background: rgba(169, 39, 180, 0.6);
+    box-sizing: border-box;
+    border-radius: 50%;
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.text-level-bar {
+    position: absolute;
+    width: 50.04px;
+    height: 16.98px;
+    left: 30px;
+    bottom: 0px;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+
+    color: #000000;
+
+}
+
+.bar-full {
+    position: absolute;
+    width: 236px;
+    height: 18px;
+    right: 0px;
+    bottom: 0px;
+
+    background: #98ADF9;
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.bar-slice {
+    position: absolute;
+    width: 101.88px;
+    height: 17.87px;
+    left: 0px;
+    bottom: 0px;
+
+    background: #4E63AF;
+    border-radius: 24px;
+}
+
+.title-box-nama {
+    position: absolute;
+    width: 311px;
+    height: 74px;
+    left: 50px;
+    top: 197px;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.box-input {
+    position: absolute;
+    width: 250px;
+    height: 57px;
+    left: 60px;
+    top: 338px;
+    background: #FFFFFF;
+    border: 2px solid #A824B3;
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.btn-input-nama {
+    left: 121px;
+    top: 442px;
+}
+
+.pesan-hasil {
+    position: absolute;
+    width: 99px;
+    height: 37px;
+    left: 153px;
+    top: 144px;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 37px;
+    /* identical to box height */
+    text-align: center;
+
+    color: #69B871;
+
+}
+
+.pesan {
+    position: absolute;
+    width: 350px;
+    height: 148px;
+    left: 31px;
+    top: 237px;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 37px;
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.pesan-poin {
+    position: absolute;
+    width: 40px;
+    height: 37px;
+    left: 186px;
+    top: 442px;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 37px;
+    /* identical to box height */
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.btn-play-next {
+    left: 121px;
+    top: 566px;
+}
+
+.pesan-hasil-wrong {
+    position: absolute;
+    width: 99px;
+    height: 37px;
+    left: 153px;
+    top: 144px;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 37px;
+    /* identical to box height */
+    text-align: center;
+
+    color: #D87070;
+
+}
+
+.pesan-wrong {
+    position: absolute;
+    width: 350px;
+    height: 148px;
+    left: 31px;
+    top: 237px;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 37px;
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.pesan-poin-wrong {
+    position: absolute;
+    width: 40px;
+    height: 37px;
+    left: 186px;
+    top: 442px;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 37px;
+    /* identical to box height */
+    text-align: center;
+
+    color: #D87070;
+
+}
+
+.btn-play-next-wrong {
+    left: 121px;
+    top: 566px;
+}
+
+.box-content-tentang {
+    position: absolute;
+    width: 360px;
+    height: 453px;
+    left: 25px;
+    top: 118px;
+
+    background: #FFFFFF;
+    border: 2px solid #A824B3;
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.text-content-tentang {
+    position: absolute;
+    width: 311px;
+    height: 148px;
+    left: 20px;
+    top: 20px;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.btn-tentang-keluar {
+    left: 121px;
+    top: 600px;
+}
+
+.box-content-level {
+    position: absolute;
+    width: 224.31px;
+    height: 149.26px;
+    left: 94px;
+    top: 74px;
+    padding: 20px 0;
+
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: 2px solid #A824B3;
+    text-align: center;
+}
+
+.level-text {
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    left: 0px;
+    top: 20px;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 19px;
+    text-align: center;
+
+    color: #070707;
+}
+
+.level-number {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    left: 0px;
+    top: 55px;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 37px;
+
+    color: #000000;
+}
+
+.poin-text {
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    left: 0px;
+    top: 105px;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 19px;
+    text-align: center;
+
+    color: #0A0909;
+}
+
+.poin-number {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    left: 0px;
+    top: 135px;
+
+    font-family: Questrial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 37px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.box-level-list {
+    position: absolute;
+    width: 310.1px;
+    height: 263.71px;
+    left: 51px;
+    top: 335.29px;
+
+}
+
+.level-bar-1 {
+    position: absolute;
+    width: 309.2px;
+    height: 25px;
+    left: 0px;
+    top: 0px;
+}
+
+.level-bar-1>.bar-full,
+.level-bar-2>.bar-full,
+.level-bar-3>.bar-full,
+.level-bar-4>.bar-full,
+.level-bar-5>.bar-full {
+    width: 210px;
+}
+
+.level-bar-2 {
+    position: absolute;
+    width: 309.2px;
+    height: 25px;
+    left: 0px;
+    top: 50px;
+}
+
+.level-bar-3 {
+    position: absolute;
+    width: 309.2px;
+    height: 25px;
+    left: 0px;
+    top: 100px;
+}
+
+.level-bar-4 {
+    position: absolute;
+    width: 309.2px;
+    height: 25px;
+    left: 0px;
+    top: 150px;
+}
+
+.level-bar-5 {
+    position: absolute;
+    width: 309.2px;
+    height: 25px;
+    left: 0px;
+    top: 200px;
+}
+
+.btn-level-back {
+    bottom: 170px;
+    left: 121px;
+
 }

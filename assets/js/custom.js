@@ -1,11 +1,6 @@
 var contentPlay = document.getElementsByClassName('content-play');
 
-var btnLevelStatus = document.getElementsByClassName("level-status");
-if (btnLevelStatus[0]) {
-    btnLevelStatus[0].addEventListener("click", function () {
-        alert('level status')
-    })
-}
+
 var btnPoinStatus = document.getElementsByClassName("poin-status");
 
 if (btnPoinStatus[0]) {
@@ -27,14 +22,14 @@ if (btnPlay[0]) {
 var btnBenar = document.getElementsByClassName('benar');
 if (btnBenar[0]) {
     btnBenar[0].addEventListener("click", function () {
-        alert('benar')
+        setPage('content-play-after')
     })
 }
 
 var btnSalah = document.getElementsByClassName('salah');
 if (btnSalah[0]) {
     btnSalah[0].addEventListener("click", function () {
-        alert('salah')
+        setPage('content-play-after-wrong')
     })
 }
 
@@ -50,22 +45,15 @@ if (btnBack[0]) {
 var btnSetting = document.getElementsByClassName('btn-setting')
 if (btnSetting[0]) {
     btnSetting[0].addEventListener("click", function () {
-        alert('setting');
+        setPage('content-level')
     })
 }
 var btnTentang = document.getElementsByClassName('btn-tentang')
 if (btnTentang[0]) {
     btnTentang[0].addEventListener("click", function () {
-        alert('Tentang');
+        setPage('content-tentang')
     })
 }
-var btnKeluar = document.getElementsByClassName('btn-keluar');
-if (btnKeluar[0]) {
-    btnKeluar[0].addEventListener("click", function () {
-        confirm('Keluar');
-    })
-}
-
 setPage('content-home')
 setLevel('Level 2')
 setPoin(100)
@@ -77,9 +65,44 @@ if (btnStart[0]) {
     })
 }
 
+var btnInputNama = document.getElementsByClassName('btn-input-nama');
+if (btnInputNama[0]) {
+    btnInputNama[0].addEventListener("click", function () {
+        setPage('content-home')
+    })
+}
+
+var btnPlayNext = document.getElementsByClassName('btn-play-next');
+if (btnPlayNext[0]) {
+    btnPlayNext[0].addEventListener("click", function () {
+        setPage('content-play')
+    })
+}
+
+var btnPlayNextWrong = document.getElementsByClassName('btn-play-next-wrong');
+if (btnPlayNextWrong[0]) {
+    btnPlayNextWrong[0].addEventListener("click", function () {
+        setPage('content-play')
+    })
+}
+
+var btnTentangKeluar = document.getElementsByClassName('btn-tentang-keluar');
+if (btnTentangKeluar[0]) {
+    btnTentangKeluar[0].addEventListener("click", function () {
+        setPage('content-home')
+    })
+}
+
+var btnLevelBack = document.getElementsByClassName('btn-level-back');
+if (btnLevelBack[0]) {
+    btnLevelBack[0].addEventListener("click", function () {
+        setPage('content-home')
+    })
+}
+
 function setPage(contentSet) {
     var bodyPage = document.getElementById("Page");
-    var pageList = ['content-start', 'content-home', 'content-play'];
+    var pageList = ['content-start', 'content-home', 'content-play', 'content-box-nama', 'content-play-after', 'content-play-after-wrong', 'content-tentang', 'content-level'];
 
     //Set Page
     bodyPage['dataset']['page'] = contentSet;
@@ -95,14 +118,20 @@ function setPage(contentSet) {
             content.classList.add('hide');
         }
     }
+    var groupStatus = document.getElementsByClassName('group-status');
 
     //Check status
-    if (contentSet == 'content-start') {
-        btnLevelStatus[0].classList.add('hide');
-        btnPoinStatus[0].classList.add('hide')
-    } else {
-        btnLevelStatus[0].classList.remove('hide');
-        btnPoinStatus[0].classList.remove('hide')
+    if (groupStatus) {
+        if (contentSet == 'content-start' ||
+            contentSet == 'content-box-nama' ||
+            contentSet == 'content-play-after' ||
+            contentSet == 'content-play-after-wrong' ||
+            contentSet == 'content-level') {
+            groupStatus[0].classList.add('hide');
+        } else {
+            console.log(groupStatus)
+            groupStatus[0].classList.remove('hide');
+        }
     }
 }
 

@@ -15,7 +15,7 @@ var knex = require("knex")({
         filename: path.join(__dirname, 'database.sqlite')
     },
     useNullAsDefault: true,
-    debug: true
+    debug: false
 });
 
 app.on("ready", () => {
@@ -25,7 +25,15 @@ app.on("ready", () => {
         show: false,
         webPreferences: {
             nodeIntegration: true
-        }
+        },
+        resizable: false,
+        label: 'Screen',
+        submenu: [{
+            label: 'Resizable Window',
+            click() {
+                mainWindow.setResizable(false);
+            }
+        }]
     })
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'home.html'),
@@ -37,12 +45,33 @@ app.on("ready", () => {
     })
 
     ipcMain.on("mainWindowLoaded", function () {
-        let result = knex.select("FirstName").from("User")
+        let result = knex.select("*").from("User")
         console.log(result)
         result.then(function (rows) {
             mainWindow.webContents.send("resultSent", rows);
         })
     });
+
+    //Terima data dari client
+    ipcMain.on('sendData', function (evt, arg) {
+        console.log(arg.data)
+
+        let add = knex.insert({
+            name: arg.data,
+            poin: 0
+        }).into("User").then();
+
+        //Kirim data ke client
+        let result = knex.select("*").from("User")
+        console.log(result)
+        result.then(function (rows) {
+            mainWindow.webContents.send("sendDataResult", rows);
+        })
+
+        mainWindow.webContents.send('sendDataResult', {
+            "data": "andriyas"
+        })
+    })
 });
 
 
