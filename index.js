@@ -9,6 +9,12 @@ require('electron-reload')(__dirname, {
     electron: require(`${__dirname}/node_modules/electron`)
 });
 
+
+const user = {
+    status: false,
+    data: {}
+};
+
 var knex = require("knex")({
     client: "sqlite3",
     connection: {
@@ -17,6 +23,7 @@ var knex = require("knex")({
     useNullAsDefault: true,
     debug: false
 });
+
 
 app.on("ready", () => {
     let mainWindow = new BrowserWindow({
@@ -46,14 +53,31 @@ app.on("ready", () => {
 
     ipcMain.on("mainWindowLoaded", function () {
         let result = knex.select("*").from("User")
-        console.log(result)
+
+        let userTest = knex.select("*")
+            .from("User")
+            .join("Level")
+            .where("User.LevelId", "Level.LevelId")
+
+        // console.log(userTest)
+        userTest.then(function (rows) {
+            console.log(rows);
+        });
         result.then(function (rows) {
-            mainWindow.webContents.send("resultSent", rows);
+            if (rows == []) {
+                user.status = false;
+            } else {
+                user.data = rows[0];
+                user.status = true;
+            }
+            mainWindow.webContents.send("dataUser", user)
         })
+
+
     });
 
     //Terima data dari client
-    ipcMain.on('sendData', function (evt, arg) {
+    /* ipcMain.on('sendData', function (evt, arg) {
         console.log(arg.data)
 
         let add = knex.insert({
@@ -71,6 +95,28 @@ app.on("ready", () => {
         mainWindow.webContents.send('sendDataResult', {
             "data": "andriyas"
         })
+    }) */
+
+    //Tambah User
+    ipcMain.on('tambahUser', function (evt, arg) {
+        if (arg.nama != '') {
+            let addUser = knex.insert({
+                name: arg.nama,
+                poin: 0
+            }).into("User").then();
+
+            let resultUser = knex.select("*").from("User");
+
+            resultUser.then(function (rows) {
+                if (rows == []) {
+                    user.status = false;
+                } else {
+                    user.data = rows
+                    user.status = true;
+                    mainWindow.webContents.send("resultSent", rows);
+                }
+            })
+        }
     })
 });
 

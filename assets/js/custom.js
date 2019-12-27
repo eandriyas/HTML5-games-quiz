@@ -54,7 +54,7 @@ if (btnTentang[0]) {
         setPage('content-tentang')
     })
 }
-setPage('content-home')
+setPage('content-start')
 setLevel('Level 2')
 setPoin(100)
 
@@ -65,10 +65,17 @@ if (btnStart[0]) {
     })
 }
 
+/* Input Nama */
 var btnInputNama = document.getElementsByClassName('btn-input-nama');
 if (btnInputNama[0]) {
     btnInputNama[0].addEventListener("click", function () {
-        setPage('content-home')
+        var inputNama = document.getElementsByClassName("box-input");
+        if (inputNama[0].value != '') {
+            var nama = inputNama[0].value;
+            ipc.send("tambahUser", {
+                nama: nama
+            })
+        }
     })
 }
 
@@ -129,7 +136,6 @@ function setPage(contentSet) {
             contentSet == 'content-level') {
             groupStatus[0].classList.add('hide');
         } else {
-            console.log(groupStatus)
             groupStatus[0].classList.remove('hide');
         }
     }
