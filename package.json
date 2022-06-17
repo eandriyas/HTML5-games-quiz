@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/eandriyas/HTML5-games-quiz#readme",
   "dependencies": {
-    "electron": "^5.0.6",
+    "electron": "^15.5.5",
     "electron-reload": "^1.5.0",
     "knex": "^0.19.0",
     "sqlite3": "^4.1.1"
